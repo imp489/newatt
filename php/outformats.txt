@@ -1,0 +1,41 @@
+#18:s,16:s,~OS~101-A~ali razavi~software87
+
+#slots~course~room~teacher~group~courseid~roomid~teacherid~groupid
+slot : id:state,id:state
+teacher : name family
+
+
+
+getpossibles:
+#datatype('c','t'),courseid,roomid,curteacherid,groupid,slottype,slotid
+
+savemanualchanges:
+#chngtype('c','t'),courseid,roomid,prevteacherid,groupid,slottype,slotid,{newslotid(c) or newteacherid(t)},newteachername,newteacherfamily
+0			1	2	3	    4	    5	    6		7			
+
+
+full manual :
+"#{$row['groupID']}~{$row['groupcaption']}~{$row['timeslots']}~{$row['courseID']}~{$row['coursecaption']}~{$row['teacherID']}~{$row['teachername']} {$row['teacherfamily']}~{$row['roomID']}~{$row['roomcaption']}";
+
+
+edit prime:
+teacher:
+"#{$row['teachergroupid']}~{$row['teacherID']}~{$row['teachername']}~{$row['teacherfamily']}~{$row['cooptype']}~{$row['teacherField']}~{$row['teacherTel']}~{$row['teacherMobile']}~{$row['email']}~{$row['teacherAdrs']}~{$row['teacherDesc']}";
+
+course
+#{$row['courseID']}~{$row['coursecaption']}~{$row['coursetype']}~{$row['groupcaption']}~{$row['courseAunits']}~{$row['courseTunits']}~{$row['coursepres']}~{$row['coursesims']}~{$row['neededroomtypeID']}~{$row['neededroomtypeAID']}~{$row['coursedesc']}~{$row['coursehrdnes']}";
+
+
+
+save edit teacher
+'teachername','teacherfamily','cooptype','teacherdegree','teacherfield','teachertel','teachermobile','email','teacheradrs','teacherdesc')
+
+scheduling errors format:
+$outstr.="#{$row['opttype']}~{$row['courseID']}~{$row['coursecaption']}~{$row['teacherID']}~{$row['teachernamefam']}~{$row['groupID']}~{$row['groupcaption']}~{$row['slottype']}~{$row['slotid']}~{$row['opttime']}~{$row['optdate']}";
+notsch,anyteach,in1day
+
+
+in getdatalib
+returning course :
+
+#courseID~coursecaption@@@@groupidconf1@@@@coursep~coursepart...

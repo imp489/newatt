@@ -1,0 +1,14 @@
+.ie8-fix-border-radius {
+	position:relative;
+}
+
+#sidebar #menu_search form {
+	border:1px solid #232327;
+}
+#sidebar #menu_search form input {
+	background-color:#2B2B2F;
+}
+
+#aToolTip .arrow {
+	top:-17px;
+}

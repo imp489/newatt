@@ -1,0 +1,1478 @@
+/* config */
+/**********/
+#header {
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+  position: fixed;
+  /*position:absolute;*/
+  z-index: 4;
+  border-bottom: 4px #C5D52B solid;
+  background: #35353a url("../imgs/header-bg.png") repeat-x 0 0;
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.35);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.35);
+  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=135, Color='#555555');
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=135, Color='#555555')";
+  /*.logo {		
+  	padding: 0 10px;
+  }*/ }
+
+#footer {
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  position: absolute;
+  bottom: 1px;
+  width: 100%;
+  left: 0;
+  color: #333;
+  /**/ }
+  #footer .line {
+    margin: 0 4%;
+    border-top: 1px solid #DADADA; }
+
+@font-face {
+  font-family: 'IcoMoon';
+  src: url("fonts/icomoon.eot");
+  src: url("fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("fonts/icomoon.svg#IcoMoon") format("svg"), url("fonts/icomoon.woff") format("woff"), url("fonts/icomoon.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+.icon {
+  font-family: 'IcoMoon' !important;
+  font-weight: normal;
+  font-style: normal;
+  speak: none;
+  font-family: 14px;
+  -webkit-font-smoothing: antialiased; }
+
+#sidebar {
+  width: <?php echo SIDEBAR_MAX_WIDTH; ?>px;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  	/*#menu_search {
+  
+  		
+  		form {
+  			position:relative;
+  			margin:0 12px;
+  			padding:3px;
+  			background-color:#2B2B2F;
+  			background-color: rgba(0, 0, 0, 0.15);
+  			@include border-radius(4px);
+  		}
+  		input {
+  			margin:0;
+  			border: medium none;
+  			outline: medium none;
+  			background:transparent;
+  			padding: 3px 3px 3px 25px;
+  			width: 85%;
+  			color:#fff;
+  			font-family:tahoma;
+  		}
+  		button {
+  			background-color: #C5D52B;
+  			display: block;
+  			height: 22px;
+  			width: 22px;
+  			@include border-radius(4px);
+  			cursor: pointer;
+  			text-align: center;
+  			border: medium none;
+  			color:#fff;
+  			position: absolute;
+  			left:3px;
+  			top: 3px;
+  			z-index:4;
+  			padding:0;			
+  		}
+  	}*/ }
+  #sidebar .top_padding {
+    padding-top: 60px; }
+  #sidebar .space.top {
+    /*height:10px;*/ }
+  #sidebar #menu_items {
+    width: <?php echo SIDEBAR_MAX_WIDTH; ?>px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: fixed; }
+    #sidebar #menu_items li.one {
+      border-top: 0; }
+    #sidebar #menu_items li {
+      white-space: nowrap;
+      border-bottom: 1px solid #292529;
+      border-top: 1px solid #535357; }
+      #sidebar #menu_items li a {
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        height: 38px; }
+        #sidebar #menu_items li a:hover {
+          background: #252528;
+          color: #C5D52B; }
+          #sidebar #menu_items li a:hover .icon {
+            color: #C5D52B; }
+      #sidebar #menu_items li .icon {
+        color: #fff;
+        font-size: 25px;
+        margin: 6px 12px 0 6px;
+        z-index: 200;
+        float: right;
+        width: 30px;
+        height: 30px;
+        cursor: pointer; }
+      #sidebar #menu_items li .label {
+        line-height: 36px; }
+      #sidebar #menu_items li.active {
+        /*border:0;*/ }
+        #sidebar #menu_items li.active a .icon {
+          color: #C5D52B; }
+      #sidebar #menu_items li.item_actived {
+        background: #f0f0f0 url("../imgs/paper.png");
+        /*background:#C5D52B; /* green */ }
+        #sidebar #menu_items li.item_actived a, #sidebar #menu_items li.item_actived a .icon {
+          color: #252528; }
+        #sidebar #menu_items li.item_actived a:hover {
+          background: none; }
+    #sidebar #menu_items ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
+      -moz-box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.5);
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5); }
+      #sidebar #menu_items ul li {
+        background: #2c2c31;
+        background: rgba(0, 0, 0, 0.15);
+        border-bottom: 0;
+        border-top: 1px solid transparent; }
+        #sidebar #menu_items ul li a .icon {
+          color: #666 !important; }
+        #sidebar #menu_items ul li a {
+          color: #fff !important;
+          height: 30px;
+          /*line-height:30px;*/
+          /*padding-right:50px;*/ }
+        #sidebar #menu_items ul li:hover a {
+          color: #C5D52B !important; }
+        #sidebar #menu_items ul li.selected {
+          /*background:#F0F0F0 url("../imgs/paper.png");*/
+          /*background:#C5D52B;*/ }
+          #sidebar #menu_items ul li.selected a, #sidebar #menu_items ul li.selected a .icon {
+            /*color:#252528 !important;*/
+            color: #C5D52B !important; }
+          #sidebar #menu_items ul li.selected a:hover {
+            background: none;
+            cursor: default; }
+        #sidebar #menu_items ul li .icon {
+          width: 16px;
+          height: 16px;
+          margin: 1px 18px 0 25px;
+          font-size: 15px;
+          line-height: 30px;
+          cursor: pointer; }
+        #sidebar #menu_items ul li .label {
+          line-height: 26px; }
+
+#menu_items_control {
+  color: #2D89EF;
+  /*position:fixed;*/
+  /*top:450px;*/
+  /*display:none;*/ }
+
+#sidebar_splitter {
+  background: transparent url("../imgs/sidebar-splitter.png") repeat-y scroll 0 0;
+  bottom: 0;
+  top: 0;
+  right: <?php echo ((SIDEBAR_DEFAULT_STATE == "max" ? SIDEBAR_MAX_WIDTH : SIDEBAR_MIN_WIDTH)-9); ?>px;
+  position: fixed;
+  width: 17px;
+  z-index: 2; }
+
+/*.inset {
+	
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 2px rgba(0, 0, 0, 0.5) inset;
+	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 2px rgba(0, 0, 0, 0.5) inset;
+	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 2px rgba(0, 0, 0, 0.5) inset;
+}*/
+#page_content {
+  position: relative;
+  margin-right: <?php echo SIDEBAR_DEFAULT_STATE == "max" ? SIDEBAR_MAX_WIDTH : SIDEBAR_MIN_WIDTH; ?>px;
+  background: #fff;
+  background: #f0f0f0 url("../imgs/paper.png") 0 0; }
+  #page_content .top_padding {
+    padding-top: 50px; }
+
+#content {
+  padding: 15px 15px; }
+
+/* 
+	Required Styles
+*/
+#aToolTip {
+  position: absolute;
+  display: none;
+  z-index: 50000;
+  font-family: tahoma;
+  font-size: 12px;
+  line-height: 21px;
+  vertical-align: middle; }
+  #aToolTip p {
+    padding: 0;
+    margin: 0; }
+  #aToolTip .arrow {
+    display: inline-block;
+    *zoom: 1;
+    *display: inline;
+    position: relative;
+    top: 7px;
+    z-index: 100;
+    width: 13px;
+    height: 24px;
+    background: transparent url("../imgs/tooltip-right-arrow1.png") no-repeat 0 50%; }
+
+#aToolTip .aToolTipContent {
+  background: #C5D52B;
+  /*#B91D47;*/
+  background: rgba(197, 213, 43, 0.85);
+  display: inline-block;
+  position: relative;
+  *zoom: 1;
+  *display: inline;
+  margin: 0;
+  padding: 0;
+  right: -1px;
+  /*-moz-box-shadow: 2px 2px 5px #111;
+  -webkit-box-shadow: 2px 2px 5px #111;
+  box-shadow: 2px 2px 5px #111;*/
+  color: #252528;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  behavior: url(css/pie/pie.php);
+  border: 1px solid #666; }
+  #aToolTip .aToolTipContent div {
+    padding: 3px 8px; }
+
+/* 
+	END: Required Styles
+*/
+/**
+	Default Theme
+*/
+.defaultTheme {
+  /*border:2px solid #C5D52B;*/
+  color: #fff;
+  margin: 0;
+  /*-moz-border-radius: 12px 12px 12px 0;
+  -webkit-border-radius: 12px 12px 12px 0;
+  -khtml-border-radius: 12px 12px 12px 0;
+  border-radius: 12px 12px 12px 0;*/ }
+
+.defaultTheme #aToolTipCloseBtn {
+  display: block;
+  height: 18px;
+  width: 18px;
+  background: url(../images/closeBtn.png) no-repeat;
+  text-indent: -9999px;
+  outline: none;
+  position: absolute;
+  top: -20px;
+  right: -30px;
+  margin: 2px;
+  padding: 4px; }
+
+div.table {
+  margin-bottom: 30px; }
+  div.table form, div.table table, div.table ul, div.table th, div.table td, div.table input {
+    margin: 0;
+    padding: 0; }
+  div.table .thin {
+    margin: 0 2px; }
+  div.table .scroll_holder.thin {
+    margin-left: 4px !important; }
+  div.table .header {
+    background-image: url("../imgs/panel-header-bg.png");
+    background-repeat: repeat-x;
+    border-bottom: 2px solid #35353A;
+    border-radius: 4px 4px 4px 4px;
+    font-size: 18px;
+    line-height: 20px;
+    font-family: 'B Nazanin';
+    height: 25px;
+    padding: 12px 15px 10px;
+    background-color: #35353A;
+    color: #C5D52B;
+    text-shadow: 0 0 6px rgba(197, 213, 42, 0.5); }
+  div.table .filter {
+    background: #ccc;
+    color: #333;
+    border: 1px solid #ccc;
+    border-bottom: 1px solid #aaa;
+    border-right: 1px solid 	#BCBCBC;
+    border-left: 1px solid #BCBCBC;
+    font-size: 12px;
+    line-height: 22px;
+    *position: relative; }
+    div.table .filter form {
+      margin: 5px;
+      *position: relative;
+      *top: -5px;
+      *right: 3px; }
+      div.table .filter form span.space {
+        padding: 0 5px; }
+      div.table .filter form input[type="text"] {
+        *position: relative;
+        *top: 5px; }
+      div.table .filter form input[type="checkbox"] {
+        position: relative;
+        top: 3px;
+        *top: 2px;
+        *left: -5px; }
+    div.table .filter .float_l {
+      *position: absolute;
+      *left: 0;
+      *top: 10px; }
+  div.table .toolbars {
+    height: 50px; }
+    div.table .toolbars .toolbar {
+      background: #fff;
+      padding: 4px 8px 0 5px;
+      margin: 5px 0 5px 3px;
+      height: 35px;
+      overflow: hidden;
+      color: #777;
+      font-size: 12px;
+      float: right;
+      white-space: nowrap;
+      border: 1px solid #bbb;
+      background: #fff; }
+      div.table .toolbars .toolbar span.label, div.table .toolbars .toolbar a {
+        display: inline-block;
+        height: 32px; }
+      div.table .toolbars .toolbar a {
+        width: 34px;
+        text-decoration: none;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        opacity: 0.7; }
+        div.table .toolbars .toolbar a:hover {
+          opacity: 1; }
+      div.table .toolbars .toolbar span.label {
+        position: relative;
+        top: 7px;
+        margin-left: 3px; }
+    div.table .toolbars .holder.fixed {
+      position: fixed;
+      width: 100%;
+      top: 50px;
+      z-index: 200;
+      /*opacity:0.6;
+      
+      &:hover {
+      	opacity:1;
+      }*/ }
+  div.table .scroll_holder .auto_h_scroll {
+    /**/
+    /*border-top:1px solid #ccc;		*/
+    border: 1px solid #ccc;
+    border-top: 0;
+    overflow: hidden;
+    overflow-x: auto;
+    /* fix ie7 bug */
+    /* desc:
+     *	 when table content width is more than visible area width, ie7 create little
+     *   vertical scrollbar, why ?!?!?!?!!
+     * */
+    *overflow-x: scroll;
+    /***************/
+    /* fix ie9 bug */
+    /* desc:
+     *   when table width is more than visible area, when mouse hover occured
+     *   on table row, table holder div height changed magically !!!!
+     * */
+    display: inline-block;
+    width: 100%;
+    /***************/
+    /*margin-right:$checkbox_cols_width;
+    *margin-right:0;*/ }
+    div.table .scroll_holder .auto_h_scroll table {
+      width: 100%;
+      border-spacing: 0;
+      border-collapse: collapse; }
+      div.table .scroll_holder .auto_h_scroll table th, div.table .scroll_holder .auto_h_scroll table td {
+        border: 0;
+        white-space: nowrap;
+        text-align: center;
+        overflow: hidden;
+        border-right: 1px solid #ccc;
+        cursor: default; }
+        div.table .scroll_holder .auto_h_scroll table th.one, div.table .scroll_holder .auto_h_scroll table td.one {
+          border-right: 0; }
+      div.table .scroll_holder .auto_h_scroll table .min {
+        /* fix ie7 bug */
+        /* desc:
+         *   in ie7 browser width 1% for minumize column not work correctly.
+         *   so we use width:1px that work on all browsers
+         * */
+        /*width:1%;*/
+        width: 1px;
+        /***************/ }
+      div.table .scroll_holder .auto_h_scroll table .disabled {
+        display: none; }
+      div.table .scroll_holder .auto_h_scroll table div.cell.check {
+        width: 25px; }
+      div.table .scroll_holder .auto_h_scroll table thead {
+        background: #e8e8e8 repeat-x left top;
+        background-image: -ms-linear-gradient(top, #f7f7f7, #e8e8e8);
+        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f7f7f7), to(#e8e8e8));
+        background-image: -webkit-linear-gradient(top, #f7f7f7, #e8e8e8);
+        background-image: -o-linear-gradient(top, #f7f7f7, #e8e8e8);
+        background-image: -moz-linear-gradient(top, #f7f7f7, #e8e8e8);
+        background-image: linear-gradient(top, #f7f7f7, #e8e8e8); }
+        div.table .scroll_holder .auto_h_scroll table thead th {
+          border-bottom: 1px solid #ccc;
+          font-family: tahoma;
+          font-size: 13px;
+          font-weight: normal;
+          color: #222; }
+          div.table .scroll_holder .auto_h_scroll table thead th.sortable {
+            background: transparent url("../imgs/sort.png") 8px 60% no-repeat;
+            padding-left: 10px; }
+          div.table .scroll_holder .auto_h_scroll table thead th.sortable.asc {
+            background: transparent url("../imgs/sort_asc.png") 8px 60% no-repeat; }
+          div.table .scroll_holder .auto_h_scroll table thead th.sortable.desc {
+            background: transparent url("../imgs/sort_desc.png") 8px 60% no-repeat; }
+        div.table .scroll_holder .auto_h_scroll table thead tr.sub th {
+          color: #444;
+          font-size: 12px; }
+        div.table .scroll_holder .auto_h_scroll table thead .cell {
+          vertical-align: middle; }
+        div.table .scroll_holder .auto_h_scroll table thead .cell.check.fix_height {
+          /*$height: 50px;
+          height:$height;
+          line-height:$height;*/ }
+      div.table .scroll_holder .auto_h_scroll table tbody {
+        background-color: #fafafa;
+        /* disable mouse hover on scroll table with drag */ }
+        div.table .scroll_holder .auto_h_scroll table tbody.scrolling tr td {
+          cursor: move; }
+        div.table .scroll_holder .auto_h_scroll table tbody tr {
+          /*&:hover {
+          	td {
+          		background:#C5D52B;
+          	}
+          }*/ }
+          div.table .scroll_holder .auto_h_scroll table tbody tr.odd {
+            background-color: #f2f2f2; }
+          div.table .scroll_holder .auto_h_scroll table tbody tr:hover td {
+            background: #C5D52B; }
+          div.table .scroll_holder .auto_h_scroll table tbody tr.selected {
+            background-color: #EFF97C; }
+            div.table .scroll_holder .auto_h_scroll table tbody tr.selected.odd {
+              background-color: #E7EF75; }
+          div.table .scroll_holder .auto_h_scroll table tbody tr td {
+            font-size: 12px;
+            color: #222; }
+        div.table .scroll_holder .auto_h_scroll table tbody .cell {
+          height: 35px;
+          vertical-align: middle;
+          line-height: 35px;
+          overflow: hidden; }
+        div.table .scroll_holder .auto_h_scroll table tbody.disable_hover tr:hover td {
+          background: transparent; }
+        div.table .scroll_holder .auto_h_scroll table tbody.disable_hover tr.hover td {
+          background: #C5D52B; }
+    div.table .scroll_holder .auto_h_scroll .table_head {
+      position: fixed;
+      width: 100%; }
+  div.table .footer {
+    border: 1px solid #ccc;
+    border-top: 0;
+    background: #444;
+    color: #fff;
+    height: 45px;
+    font-size: 12px; }
+    div.table .footer .status {
+      float: right; }
+    div.table .footer .paginate {
+      float: left;
+      position: relative;
+      color: #ffffff;
+      padding: 2px;
+      margin: 10px 0 0 8px;
+      background-color: #3A3A3A;
+      border-radius: 4px;
+      -moz-border-radius: 4px;
+      -webkit-border-radius: 4px;
+      behavior: url(css/pie/pie.php);
+      -webkit-box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.15), inset 0px 1px 2px rgba(0, 0, 0, 0.5);
+      -moz-box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.15), inset 0px 1px 2px rgba(0, 0, 0, 0.5);
+      box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.15), inset 0px 1px 2px rgba(0, 0, 0, 0.5); }
+      div.table .footer .paginate a {
+        float: left;
+        height: 20px;
+        padding: 0 10px;
+        display: block;
+        line-height: 20px;
+        text-align: center;
+        cursor: pointer;
+        outline: none;
+        background-color: #444;
+        color: #fff;
+        text-decoration: none;
+        border-right: 1px solid #232323;
+        border-left: 1px solid #666666;
+        behavior: url(css/pie/pie.php);
+        -webkit-box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5), inset 0px 1px 0px rgba(255, 255, 255, 0.15);
+        -moz-box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5), inset 0px 1px 0px rgba(255, 255, 255, 0.15);
+        box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5), inset 0px 1px 0px rgba(255, 255, 255, 0.15);
+        position: relative; }
+      div.table .footer .paginate a[href="#frist"] {
+        border-radius: 4px 0 0 4px;
+        -moz-border-radius: 4px 0 0 4px;
+        -webkit-border-radius: 4px 0 0 4px;
+        behavior: url(css/pie/pie.php); }
+      div.table .footer .paginate a[href="#last"] {
+        border-radius: 0 4px 4px 0;
+        -moz-border-radius: 0 4px 4px 0;
+        -webkit-border-radius: 0 4px 4px 0;
+        behavior: url(css/pie/pie.php); }
+      div.table .footer .paginate a.active {
+        background: #C5D52B !important;
+        border-left: 1px solid #666 !important;
+        color: #323232;
+        cursor: default; }
+      div.table .footer .paginate a.disable {
+        background: #444 !important;
+        border-left: 1px solid #666 !important;
+        color: #666;
+        cursor: default; }
+      div.table .footer .paginate a:hover {
+        background: #222;
+        border-left: 1px solid #222; }
+
+.rc_menu {
+  width: 140px;
+  display: none;
+  position: absolute;
+  background: #35353A;
+  /*background:#fff;*/
+  z-index: 1000;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  /*border:1px solid #222;*/
+  /*border:1px solid #bbb;	
+  box-shadow:0 5px 10px #ccc;
+  -moz-box-shadow:0 5px 10px #ccc;
+  -webkit-box-shadow:0 5px 10px #ccc;*/ }
+  .rc_menu ul {
+    list-style: none;
+    padding: 4px 2px;
+    margin: 0; }
+    .rc_menu ul li a {
+      text-decoration: none;
+      color: #fff;
+      /*color:#222;*/
+      padding: 5px 8px;
+      display: block; }
+    .rc_menu ul li a:hover {
+      background: #252528;
+      /*background:#C5D52B;*/
+      color: #C5D52B; }
+
+#course_table .toolbars .base .add {
+  background-image: url("../imgs/course/book_add.png"); }
+#course_table .toolbars .base .edit {
+  background-image: url("../imgs/course/book_edit.png"); }
+#course_table .toolbars .base .delete {
+  background-image: url("../imgs/course/book_delete.png"); }
+#course_table .toolbars .conditions .prior {
+  background-image: url("../imgs/course/book_prior.png"); }
+#course_table .toolbars .conditions .term {
+  background-image: url("../imgs/course/book_curTerm.png"); }
+#course_table .toolbars .conditions .go {
+  background-image: url("../imgs/course/book_go.png"); }
+#course_table .toolbars .conditions .stack {
+  background-image: url("../imgs/course/books_stack.png"); }
+#course_table .toolbars .conditions .time {
+  background-image: url("../imgs/course/time.png"); }
+#course_table .toolbars .conditions .adm {
+  background-image: url("../imgs/course/administrator.png"); }
+#course_table .toolbars .conditions .steps {
+  background-image: url("../imgs/course/blackboard_steps.png"); }
+#course_table table div.cell.code {
+  width: 45px; }
+#course_table table div.cell.type {
+  width: 50px; }
+#course_table table div.cell.hardness {
+  width: 90px; }
+#course_table table div.cell.units {
+  width: 80px; }
+#course_table table div.cell.title {
+  min-width: 350px;
+  /* fix ie7 bug */
+  /* desc:
+   *   in ie7 table confused when we use mix-width and table holder scrollbars
+   *   not work correctly
+   * */
+  *min-width: 0 !important;
+  *max-width: 100%;
+  /**************/ }
+#course_table table div.cell.teachers {
+  width: 80px; }
+#course_table table div.cell.room {
+  width: 80px; }
+#course_table table div.cell.group {
+  width: 150px; }
+#course_table table div.cell.codes {
+  width: 400px; }
+#course_table table div.cell.pref {
+  width: 100px; }
+#course_table table div.cell.sims {
+  width: 100px; }
+#course_table table tbody div.cell.title {
+  text-align: right;
+  padding: 0 10px; }
+
+.rc_menu.courses {
+  /*width:140px;*/ }
+  .rc_menu.courses ul li a {
+    padding: 5px 5px 5px 8px; }
+    .rc_menu.courses ul li a span.icon {
+      display: block;
+      float: right;
+      width: 17px;
+      height: 17px; }
+    .rc_menu.courses ul li a.unchecked span.icon span {
+      display: none; }
+
+.tree {
+  background: #fff;
+  border: 1px solid #ccc;
+  			/*li {
+  		
+  			&.parent.close {
+  				background: transparent url('../imgs/arrow-left.png') no-repeat right 12px;
+  				
+  			}
+  			&.parent.open {
+  				background: transparent url('../imgs/arrow-bottom.png') no-repeat right 12px;
+  			}
+  			
+  			
+  			
+  			a.troot {
+  				background: transparent url('../imgs/building.png') no-repeat right 50%;
+  			}
+  			a.building {
+  				background: transparent url('../imgs/room-folder.png') no-repeat right 6px;
+  			}
+  			
+  			a {
+  				$height:25px;
+  				
+  				display:block;
+  				height:$height;
+  				line-height:$height;
+  				padding-right:25px;				
+  				background: transparent url('../imgs/room.png') no-repeat right 5px;
+  				border-right:10px solid transparent;
+  				text-decoration:none;
+  				color:#333;
+  				overflow:hidden;
+  
+  			}
+  			
+  		} // */ }
+  .tree ul {
+    margin: 10px 10px 10px 0;
+    padding: 0;
+    list-style: none; }
+    .tree ul ul {
+      padding-right: 3px;
+      margin: 0; }
+    .tree ul ul.childs ul {
+      margin-right: 20px; }
+    .tree ul ul.childs li {
+      background: transparent url("../imgs/tree-line.png") repeat-y right 0; }
+      .tree ul ul.childs li.last {
+        background: transparent; }
+        .tree ul ul.childs li.last a {
+          background: transparent url("../imgs/tree-last-join.png") no-repeat right 0; }
+      .tree ul ul.childs li a {
+        background: transparent url("../imgs/tree-join.png") no-repeat right 0;
+        padding-right: 20px; }
+        .tree ul ul.childs li a.parent {
+          padding-right: 0; }
+          .tree ul ul.childs li a.parent span.icon {
+            width: 40px; }
+            .tree ul ul.childs li a.parent span.icon span {
+              float: right;
+              width: 12px;
+              height: 26px;
+              background: transparent url("../imgs/tree-minus.png") no-repeat 50% 5px; }
+          .tree ul ul.childs li a.parent.close span.icon span {
+            background: transparent url("../imgs/tree-plus.png") no-repeat 50% 5px; }
+    .tree ul li a {
+      display: block;
+      height: 26px;
+      line-height: 23px;
+      text-decoration: none;
+      color: #333;
+      overflow: hidden; }
+      .tree ul li a span.icon {
+        display: block;
+        float: right;
+        width: 20px;
+        height: 26px;
+        margin-left: 6px; }
+      .tree ul li a:hover {
+        text-decoration: underline; }
+
+.tree.building a span.icon {
+  background: transparent url("../imgs/room.png") no-repeat left 5px; }
+.tree.building a.parent span.icon {
+  background: transparent url("../imgs/room-folder.png") no-repeat left 5px; }
+.tree.building a.parent.root span.icon {
+  background: transparent url("../imgs/building.png") no-repeat left 5px; }
+
+.form ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+.form .header {
+  background-image: url("../imgs/panel-header-bg.png");
+  background-repeat: repeat-x;
+  border-bottom: 2px solid #35353A;
+  border-radius: 4px 4px 4px 4px;
+  font-size: 18px;
+  line-height: 20px;
+  font-family: 'B Nazanin';
+  height: 25px;
+  padding: 12px 15px 10px;
+  background-color: #35353A;
+  color: #C5D52B;
+  text-shadow: 0 0 6px rgba(197, 213, 42, 0.5); }
+.form .thin {
+  margin: 0 2px; }
+.form form {
+  background: #fff;
+  border: 1px solid #ccc; }
+  .form form div.steps ul {
+    overflow: hidden;
+    background: transparent url("../imgs/form-steps-bg-x.png") repeat-x 0 0;
+    border-bottom: 1px solid #bbb; }
+    .form form div.steps ul li {
+      display: inline; }
+      .form form div.steps ul li a {
+        display: inline-block;
+        text-decoration: none;
+        height: 40px;
+        line-height: 37px;
+        background: transparent url("../imgs/form-steps-bg.png") no-repeat right -57px;
+        padding: 0 55px 0 40px;
+        margin-right: -24px;
+        border-left: 1px solid #ccc;
+        color: #444; }
+        .form form div.steps ul li a:hover {
+          background-position: right -107px;
+          color: #555; }
+        .form form div.steps ul li a.current {
+          background-position: right -10px; }
+  .form form ul.input li {
+    min-height: 300px; }
+  .form form div.control {
+    background: #D2D2D2;
+    border-top: 1px solid #BCBCBC;
+    padding: 16px 24px; }
+    .form form div.control input, .form form div.control button {
+      margin-left: 5px; }
+
+form {
+  margin: 0;
+  padding: 0;
+  /* set font */
+  /************/ }
+  form select,
+  form input[type="submit"],
+  form input[type="reset"],
+  form input[type="button"],
+  form button {
+    font-family: tahoma;
+    font-size: 12px;
+    font-weight: normal; }
+  form input[type="submit"],
+  form input[type="reset"],
+  form input[type="button"],
+  form button {
+    *padding: 2px 0px; }
+  form select,
+  form textarea,
+  form input[type="text"],
+  form input[type="password"],
+  form input[type="datetime"],
+  form input[type="datetime-local"],
+  form input[type="date"],
+  form input[type="month"],
+  form input[type="time"],
+  form input[type="week"],
+  form input[type="number"],
+  form input[type="email"],
+  form input[type="url"],
+  form input[type="search"],
+  form input[type="tel"],
+  form input[type="color"] {
+    border: 1px solid #c5c5c5;
+    color: #323232;
+    margin: 0;
+    background-color: #ffffff;
+    outline: none;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -webkit-box-shadow: inset 0px 1px 3px rgba(128, 128, 128, 0.1);
+    -moz-box-shadow: inset 0px 1px 3px rgba(128, 128, 128, 0.1);
+    box-shadow: inset 0px 1px 3px rgba(128, 128, 128, 0.1);
+    padding: 4px 6px;
+    line-height: 20px;
+    height: 30px;
+    *height: 20px; }
+  form textarea {
+    height: 10em;
+    resize: none; }
+
+.label-important, .badge-important {
+  background-color: #b94a48; }
+
+.label-important[href], .badge-important[href] {
+  background-color: #953b39; }
+
+.label-warning, .badge-warning {
+  background-color: #f89406; }
+
+.label-warning[href], .badge-warning[href] {
+  background-color: #c67605; }
+
+.label-success, .badge-success {
+  background-color: #468847; }
+
+.label-success[href], .badge-success[href] {
+  background-color: #356635; }
+
+.label-info, .badge-info {
+  background-color: #3a87ad; }
+
+.label-info[href], .badge-info[href] {
+  background-color: #2d6987; }
+
+.label-inverse, .badge-inverse {
+  background-color: #333333; }
+
+.label-inverse[href], .badge-inverse[href] {
+  background-color: #1a1a1a; }
+
+.btn .label, .btn .badge {
+  position: relative;
+  top: -1px; }
+
+.btn-mini .label, .btn-mini .badge {
+  top: 0; }
+
+.btn {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  padding: 4px 12px;
+  margin-bottom: 0;
+  font-size: 13px;
+  line-height: 20px;
+  *line-height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  color: #333333;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  background-color: #f5f5f5;
+  background-image: -moz-linear-gradient(top, white, #e6e6e6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top, white, #e6e6e6);
+  background-image: -o-linear-gradient(top, white, #e6e6e6);
+  background-image: linear-gradient(to bottom, white, #e6e6e6);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
+  border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  /**background-color:#e6e6e6;
+  filter:progid:DXImageTransform.Microsoft.gradient(enabled = false);*/
+  border: 1px solid #bbbbbb;
+  /**border:0;*/
+  border-bottom-color: #a2a2a2;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  *margin-left: .3em;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); }
+
+.btn:hover, .btn:active, .btn.active, .btn.disabled, .btn[disabled] {
+  color: #333333;
+  background-color: #e6e6e6;
+  *background-color: #d9d9d9; }
+
+.btn:active, .btn.active {
+  background-color: #cccccc \9; }
+
+.btn:first-child {
+  *margin-right: 0; }
+
+.btn:hover {
+  color: #333333;
+  text-decoration: none;
+  background-color: #e6e6e6;
+  *background-color: #d9d9d9;
+  background-position: 0 -15px;
+  -webkit-transition: background-position 0.1s linear;
+  -moz-transition: background-position 0.1s linear;
+  -o-transition: background-position 0.1s linear;
+  transition: background-position 0.1s linear; }
+
+.btn:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px; }
+
+.btn.active, .btn:active {
+  background-color: #e6e6e6;
+  background-color: #d9d9d9 \9;
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05); }
+
+.btn.disabled, .btn[disabled] {
+  cursor: default;
+  background-color: #e6e6e6;
+  background-image: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none; }
+
+.btn-large {
+  padding: 11px 19px;
+  font-size: 16.25px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px; }
+
+.btn-large [class^="icon-"], .btn-large [class*=" icon-"] {
+  margin-top: 2px; }
+
+.btn-small {
+  padding: 2px 10px;
+  font-size: 11.049999999999999px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px; }
+
+.btn-small [class^="icon-"], .btn-small [class*=" icon-"] {
+  margin-top: 0; }
+
+.btn-mini {
+  padding: 1px 6px;
+  font-size: 9.75px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px; }
+
+.btn-block {
+  display: block;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.btn-block + .btn-block {
+  margin-top: 5px; }
+
+input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="button"].btn-block {
+  width: 100%; }
+
+.btn-primary.active, .btn-warning.active, .btn-danger.active, .btn-success.active, .btn-info.active, .btn-inverse.active {
+  color: rgba(255, 255, 255, 0.75); }
+
+.btn {
+  border-color: #c5c5c5;
+  border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25); }
+
+.btn-danger {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #da4f49;
+  background-image: -moz-linear-gradient(top, #ee5f5b, #bd362f);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ee5f5b), to(#bd362f));
+  background-image: -webkit-linear-gradient(top, #ee5f5b, #bd362f);
+  background-image: -o-linear-gradient(top, #ee5f5b, #bd362f);
+  background-image: linear-gradient(to bottom, #ee5f5b, #bd362f);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffee5f5b', endColorstr='#ffbd362f', GradientType=0);
+  border-color: #bd362f #bd362f #802420;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  /**background-color:#bd362f;
+  filter:progid:DXImageTransform.Microsoft.gradient(enabled = false);*/ }
+
+.btn-danger:hover, .btn-danger:active, .btn-danger.active, .btn-danger.disabled, .btn-danger[disabled] {
+  color: #ffffff;
+  background-color: #bd362f;
+  *background-color: #a9302a; }
+
+.btn-danger:active, .btn-danger.active {
+  background-color: #942a25 \9; }
+
+button.btn, input[type="submit"].btn {
+  *padding-top: 3px;
+  *padding-bottom: 3px; }
+
+button.btn::-moz-focus-inner, input[type="submit"].btn::-moz-focus-inner {
+  padding: 0;
+  border: 0; }
+
+button.btn.btn-large, input[type="submit"].btn.btn-large {
+  *padding-top: 7px;
+  *padding-bottom: 7px; }
+
+button.btn.btn-small, input[type="submit"].btn.btn-small {
+  *padding-top: 3px;
+  *padding-bottom: 3px; }
+
+button.btn.btn-mini, input[type="submit"].btn.btn-mini {
+  *padding-top: 1px;
+  *padding-bottom: 1px; }
+
+.constraint_table {
+  /*$bg_const_every: #8A94E1;*/
+  /*#192DC7 #AFD8F8 #b1d1e9;*/
+  /* blue */
+  /*$bg_const_even: #F07DAA;*/
+  /*#E60059 #CB4B4B #f1b8d7;*/
+  /* red */
+  /*$bg_const_odd: #FDD97D;*/
+  /*#FFB800 #EDC240 #f1f1a9;*/
+  /* yellow */
+  /*$bg_const_dont: #BBE58A;*/
+  /*#7CD01A #4DA74D #afdaa0;*/
+  /* green */
+  /*$bg_const_disable: #e8eef2;*/
+  /*$bg_const_empty: transparent;*/
+  /*$hover_color: lighten(#C5D52B,38%);*/ }
+  .constraint_table table {
+    background: #fafafa;
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 100%;
+    border-right: 1px solid #aaaaaa;
+    border-bottom: 1px solid #aaaaaa;
+    /*************** hover ****************/
+    /* , tbody tr:hover */
+    /* , tbody tr:hover td.const */
+    /*.c_const_table td:hover, .r_const_table td:hover, .a_const_table td:hover, .holder td:hover {
+    	$amount: 10%;
+    	&.dont {
+    		background: lighten(#7CD01A,$amount);
+    	}
+    	&.every {
+    		background: lighten(#192DC7,$amount);
+    	}
+    	&.odd {
+    		background: lighten(#FFB800,$amount);
+    	}
+    	&.even {
+    		background: lighten(#E60059,$amount);
+    	}
+    	&.empty {
+    		background: #ddd;
+    	}
+    }*/ }
+    .constraint_table table .min {
+      width: 1px; }
+    .constraint_table table .min_h {
+      height: 1px; }
+    .constraint_table table .r_const_table div.cell {
+      width: 20px; }
+      .constraint_table table .r_const_table div.cell td {
+        height: 12px;
+        line-height: 12px; }
+    .constraint_table table .c_const_table table, .constraint_table table .r_const_table table, .constraint_table table .a_const_table table {
+      border-spacing: 0;
+      border-collapse: collapse;
+      border: 0;
+      /*td.empty {
+      	background:#fff !important;
+      }*/ }
+      .constraint_table table .c_const_table table th, .constraint_table table .c_const_table table td, .constraint_table table .r_const_table table th, .constraint_table table .r_const_table table td, .constraint_table table .a_const_table table th, .constraint_table table .a_const_table table td {
+        border: 1px solid #aaa;
+        cursor: pointer; }
+    .constraint_table table .a_const_table {
+      /**width:100%;*/ }
+    .constraint_table table td, .constraint_table table th {
+      border-left: 1px solid #aaaaaa;
+      border-top: 1px solid #aaaaaa; }
+    .constraint_table table th.const_label {
+      height: 36px; }
+    .constraint_table table td.day {
+      text-align: center;
+      /*color:#222;*/
+      width: 80px; }
+    .constraint_table table th, .constraint_table table td {
+      color: #555;
+      font-weight: normal;
+      cursor: default; }
+    .constraint_table table tbody td.const {
+      padding: 0;
+      margin: 0;
+      cursor: default;
+      color: #ccc; }
+      .constraint_table table tbody td.const div.cell, .constraint_table table tbody td.const div.cell div.options, .constraint_table table tbody td.const div.cell div.label {
+        height: 78px;
+        overflow: hidden;
+        position: relative; }
+      .constraint_table table tbody td.const div.cell div.label {
+        text-align: center;
+        line-height: 78px;
+        font-family: 'B Nazanin';
+        font-size: 20px; }
+      .constraint_table table tbody td.const div.cell div.options {
+        padding-top: 3px;
+        /*top:76px;*/ }
+        .constraint_table table tbody td.const div.cell div.options div.holder {
+          background: #666;
+          height: 76px;
+          padding: 0 4px; }
+          .constraint_table table tbody td.const div.cell div.options div.holder .space {
+            height: 25px; }
+          .constraint_table table tbody td.const div.cell div.options div.holder table, .constraint_table table tbody td.const div.cell div.options div.holder td {
+            border: 0;
+            cursor: pointer; }
+    .constraint_table table .every {
+      background: #8a94e1;
+      color: #3040bb !important; }
+    .constraint_table table .even {
+      background: #f07daa;
+      color: #d51962 !important; }
+    .constraint_table table .odd {
+      background: #fdd97d;
+      color: #b58303 !important; }
+    .constraint_table table .dont {
+      background: #bbe58a;
+      color: #639a22 !important; }
+    .constraint_table table .empty {
+      background: transparent;
+      /*color:$color_const_empty !important; */ }
+    .constraint_table table .disable {
+      background: #e8eef2 !important;
+      color: #97b2c4 !important; }
+    .constraint_table table td.const.hover, .constraint_table table th.const_label.hover, .constraint_table table td.day.hover {
+      background: #e6e6e6; }
+    .constraint_table table td.const.hover, .constraint_table table th.const_label.hover {
+      /*&.disable {
+      	background: $bg_const_disable_hover;
+      }*/ }
+      .constraint_table table td.const.hover.dont, .constraint_table table th.const_label.hover.dont {
+        background: #aadf6d; }
+      .constraint_table table td.const.hover.every, .constraint_table table th.const_label.hover.every {
+        background: #6e7ada; }
+      .constraint_table table td.const.hover.odd, .constraint_table table th.const_label.hover.odd {
+        background: #fccf5a; }
+      .constraint_table table td.const.hover.even, .constraint_table table th.const_label.hover.even {
+        background: #ec5d95; }
+      .constraint_table table td.const.hover.empty, .constraint_table table th.const_label.hover.empty {
+        /*background: $bg_const_empty_hover;*/ }
+
+.assign_table {
+  position: relative;
+  /*table {  }*/
+  /*table td.place { overflow: hidden; }*/ }
+  .assign_table .loading {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #323237; }
+    .assign_table .loading .logo {
+      /*height:80px;*/
+      background: transparent url("../imgs/logo.png") no-repeat 50% top;
+      /*border:1px solid #ccc;*/
+      position: absolute;
+      top: 42%;
+      width: 100%; }
+      .assign_table .loading .logo .progress {
+        direction: ltr;
+        width: 200px;
+        background: #fff;
+        margin: 0 auto;
+        margin-top: 65px;
+        height: 4px; }
+  .assign_table .courses, .assign_table .teachers, .assign_table .rooms {
+    border: 1px solid #666;
+    background: #fff;
+    margin-bottom: 20px;
+    padding: 5px; }
+    .assign_table .courses .header, .assign_table .teachers .header, .assign_table .rooms .header {
+      margin-bottom: 10px; }
+    .assign_table .courses .course, .assign_table .courses .teacher, .assign_table .courses .room, .assign_table .teachers .course, .assign_table .teachers .teacher, .assign_table .teachers .room, .assign_table .rooms .course, .assign_table .rooms .teacher, .assign_table .rooms .room {
+      float: right;
+      margin: 0 0 3px 3px; }
+  .assign_table .courses .course.dragging, .assign_table .courses .teacher.dragging, .assign_table .courses .room.dragging, .assign_table .teachers .course.dragging, .assign_table .teachers .teacher.dragging, .assign_table .teachers .room.dragging, .assign_table .rooms .course.dragging, .assign_table .rooms .teacher.dragging, .assign_table .rooms .room.dragging {
+    opacity: 0.5; }
+  .assign_table td.place .course_slot.dragging {
+    /*opacity:0.5;*/
+    /*display:none;*/ }
+  .assign_table .clipboard .course.dragging, .assign_table .clipboard .teacher.dragging, .assign_table .clipboard .room.dragging, .assign_table .clipboard .course_slot.dragging {
+    position: absolute;
+    z-index: 100;
+    -moz-box-shadow: 2px 2px 5px #999999;
+    -webkit-box-shadow: 2px 2px 5px #999999;
+    box-shadow: 2px 2px 5px #999999;
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=135, Color='#999999');
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=135, Color='#999999')"; }
+  .assign_table .clipboard .course .parts {
+    display: none; }
+  .assign_table .teachers .teacher, .assign_table .clipboard .teacher {
+    white-space: nowrap;
+    position: relative;
+    border: 1px solid #666;
+    width: 150px;
+    cursor: default;
+    font-family: tahoma;
+    background: #fff; }
+    .assign_table .teachers .teacher .t_holder, .assign_table .clipboard .teacher .t_holder {
+      overflow: hidden;
+      margin: 0 5px;
+      height: 23px; }
+      .assign_table .teachers .teacher .t_holder div.icon, .assign_table .clipboard .teacher .t_holder div.icon {
+        width: 20px;
+        height: 23px;
+        float: right;
+        background: #666;
+        margin-left: 3px; }
+  .assign_table .courses .course, .assign_table .clipboard .course {
+    white-space: nowrap;
+    position: relative;
+    border: 1px solid #ccc;
+    /*border-top:1px solid #ccc !important;*/
+    width: 150px;
+    cursor: default;
+    font-family: tahoma;
+    background: #fff;
+    /*&:hover {
+    	border-top: 5px solid $bg_const_every  !important;
+    }*/ }
+    .assign_table .courses .course.odd, .assign_table .clipboard .course.odd {
+      border: 1px solid #fdd97d;
+      /*.c_holder {*/
+      /*border-top: $top_border_size solid $bg_const_odd  !important;*/
+      /*}*/ }
+      .assign_table .courses .course.odd:hover, .assign_table .clipboard .course.odd:hover {
+        /*border-top-color: $bg_const_odd !important;*/ }
+        .assign_table .courses .course.odd:hover .c_holder, .assign_table .clipboard .course.odd:hover .c_holder {
+          border-top-color: #fdd97d !important; }
+    .assign_table .courses .course.even, .assign_table .clipboard .course.even {
+      border: 1px solid #f07daa;
+      /*border-top: $top_border_size solid $bg_const_even  !important;*/ }
+      .assign_table .courses .course.even:hover, .assign_table .clipboard .course.even:hover {
+        /*border-top-color: $bg_const_even !important;*/ }
+        .assign_table .courses .course.even:hover .c_holder, .assign_table .clipboard .course.even:hover .c_holder {
+          border-top-color: #f07daa !important; }
+    .assign_table .courses .course.every, .assign_table .clipboard .course.every {
+      border: 1px solid #8a94e1;
+      /*border-top: $top_border_size solid $bg_const_every  !important;*/ }
+      .assign_table .courses .course.every:hover, .assign_table .clipboard .course.every:hover {
+        /*border-top-color: $bg_const_every !important;*/ }
+        .assign_table .courses .course.every:hover .c_holder, .assign_table .clipboard .course.every:hover .c_holder {
+          border-top-color: #8a94e1 !important; }
+    .assign_table .courses .course .c_holder, .assign_table .clipboard .course .c_holder {
+      overflow: hidden;
+      margin: 0 5px;
+      height: 23px;
+      margin-bottom: 5px;
+      border-top: 3px solid #fff; }
+    .assign_table .courses .course .name, .assign_table .clipboard .course .name {
+      line-height: 23px;
+      font-size: 12px;
+      margin-right: 5px; }
+    .assign_table .courses .course .parts, .assign_table .clipboard .course .parts {
+      position: absolute;
+      bottom: 0;
+      right: 5px;
+      width: 48px;
+      height: 5px; }
+      .assign_table .courses .course .parts .part, .assign_table .clipboard .course .parts .part {
+        float: right;
+        width: 13px;
+        height: 5px;
+        background: #C5D52B;
+        /*opacity:0.6;*/
+        margin-left: 3px;
+        cursor: pointer; }
+      .assign_table .courses .course .parts .odd, .assign_table .clipboard .course .parts .odd {
+        background: #fdd97d !important; }
+      .assign_table .courses .course .parts .even, .assign_table .clipboard .course .parts .even {
+        background: #f07daa !important; }
+      .assign_table .courses .course .parts .every, .assign_table .clipboard .course .parts .every {
+        background: #8a94e1 !important; }
+  .assign_table .rooms .room, .assign_table .clipboard .room {
+    white-space: nowrap;
+    position: relative;
+    border: 1px solid #666;
+    width: 150px;
+    cursor: default;
+    font-family: tahoma;
+    background: #fff; }
+    .assign_table .rooms .room .r_holder, .assign_table .clipboard .room .r_holder {
+      overflow: hidden;
+      margin: 0 5px;
+      height: 23px; }
+    .assign_table .rooms .room .name, .assign_table .clipboard .room .name {
+      line-height: 23px;
+      font-size: 12px;
+      margin-right: 5px; }
+  .assign_table table td.place div.course_slot, .assign_table .clipboard div.course_slot {
+    margin: 0 10px 5px 10px;
+    border: 1px solid #ccc;
+    background: #fff;
+    cursor: default;
+    white-space: nowrap;
+    line-height: 23px; }
+    .assign_table table td.place div.course_slot div.code.name, .assign_table .clipboard div.course_slot div.code.name {
+      overflow: hidden; }
+    .assign_table table td.place div.course_slot .teacher_slot, .assign_table table td.place div.course_slot .room_slot, .assign_table .clipboard div.course_slot .teacher_slot, .assign_table .clipboard div.course_slot .room_slot {
+      height: 23px;
+      overflow: hidden; }
+    .assign_table table td.place div.course_slot .teacher_slot .icon, .assign_table .clipboard div.course_slot .teacher_slot .icon {
+      float: right;
+      height: 23px;
+      width: 20px;
+      overflow: hidden;
+      background: #666; }
+    .assign_table table td.place div.course_slot .color, .assign_table .clipboard div.course_slot .color {
+      height: 4px; }
+    .assign_table table td.place div.course_slot.odd, .assign_table .clipboard div.course_slot.odd {
+      border: 1px solid #fdd97d; }
+      .assign_table table td.place div.course_slot.odd .color, .assign_table .clipboard div.course_slot.odd .color {
+        background: #fdd97d !important; }
+    .assign_table table td.place div.course_slot.even, .assign_table .clipboard div.course_slot.even {
+      border: 1px solid #f07daa; }
+      .assign_table table td.place div.course_slot.even .color, .assign_table .clipboard div.course_slot.even .color {
+        background: #f07daa !important; }
+    .assign_table table td.place div.course_slot.every, .assign_table .clipboard div.course_slot.every {
+      border: 1px solid #8a94e1; }
+      .assign_table table td.place div.course_slot.every .color, .assign_table .clipboard div.course_slot.every .color {
+        background: #8a94e1 !important; }
+  .assign_table .clipboard div.course_slot.dragging {
+    margin: 0;
+    -moz-box-shadow: 2px 2px 5px #999999;
+    -webkit-box-shadow: 2px 2px 5px #999999;
+    box-shadow: 2px 2px 5px #999999;
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=135, Color='#999999');
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=135, Color='#999999')"; }
+  .assign_table table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    table-layout: fixed; }
+    .assign_table table .min_w {
+      width: 1px; }
+    .assign_table table th, .assign_table table td {
+      border: 1px solid #666;
+      cursor: default; }
+    .assign_table table th.empty, .assign_table table td.day {
+      width: 70px;
+      text-align: center; }
+    .assign_table table tbody td {
+      overflow: hidden;
+      padding: 0;
+      margin: 0; }
+      .assign_table table tbody td .cell {
+        padding-top: 5px;
+        /*min-height:60px;*/
+        height: 100%;
+        padding-bottom: 60px; }
+      .assign_table table tbody td.place {
+        vertical-align: top; }
+
+.progressbar {
+  position: relative; }
+  .progressbar .holder {
+    width: 100%;
+    height: 100%; }
+    .progressbar .holder .bar {
+      width: 0;
+      height: 100%;
+      background: #C5D52B;
+      border-right: 1px solid #AEBC16; }
+
+*, body {
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+body {
+  padding: 0;
+  margin: 0;
+  overflow-y: scroll;
+  /* fix ie7 bug */
+  /* desc:
+   *   when overflow-y:scroll ie7 display two scrollbar for page content, why ?!?!?!?
+   * */
+  *overflow-y: visible;
+  /***************/
+  background: #35353a url("../imgs/dark-bg.png") 0 0;
+  -moz-user-select: -moz-none; }
+
+html, body, #container, #page {
+  height: 100%; }
+
+#page_content {
+  min-height: 100%;
+  position: relative;
+  overflow: hidden; }
+
+#container {
+  font-family: tahoma;
+  font-size: 13px; }
+
+.clr {
+  clear: both;
+  float: none; }
+
+.float_r {
+  float: right; }
+
+.float_l {
+  float: left; }
+
+#container {
+  direction: rtl; }
+
+a:active {
+  outline: none; }
+
+a:focus {
+  -moz-outline-style: none; }

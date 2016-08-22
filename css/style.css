@@ -1,0 +1,23 @@
+<?php
+
+	define('CSS',dirname(__FILE__).'/');
+	define('WEBROOT',realpath(CSS.'../').'/');
+	
+	//
+	include_once(WEBROOT.'config.php');
+	//
+	
+	
+	// files sequence to load
+	$css_files = array(
+		'theme'
+	);
+	//
+	
+
+	header('Content-type: text/css');
+	
+	foreach( $css_files as $css_file ){
+		include_once($css_file.'.css');
+	}
+	

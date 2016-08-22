@@ -1,0 +1,8 @@
+AddType application/x-httpd-php .css
+
+#Order Deny,Allow
+#Deny from all
+#<FilesMatch "script.js$">
+#    Order Allow,Deny
+#    Allow from all
+#</FilesMatch>
